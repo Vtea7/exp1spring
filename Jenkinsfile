@@ -6,10 +6,10 @@ pipeline {
     stages {
         stage ("Clean up"){
             steps {
-                deleteDir{}
+                deleteDir {}
             }
         }
-        stage ("Clone repo"){
+        stage ("Clone repo") {
             steps {
                 sh "git clone https://github.com/Vtea7/exp1spring.git"
             }
