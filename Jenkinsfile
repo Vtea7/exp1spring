@@ -11,7 +11,7 @@ pipeline {
         }
         stage ("Clone repo"){
             steps {
-                sh "git chone https://github.com/Vtea7/exp1spring.git"
+                sh "git clone https://github.com/Vtea7/exp1spring.git"
             }
         }
         stage ("Generate Backend image") {
