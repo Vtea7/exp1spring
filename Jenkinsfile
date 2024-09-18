@@ -4,9 +4,10 @@ pipeline {
         maven 'maven'
     }
     stages {
-    stage ("Clean up"){
-        steps {
-            deleteDir{}        
+        stage ("Clean up"){
+            steps {
+                deleteDir{}
+            }
         }
     }
     stage ("Clone repo"){
