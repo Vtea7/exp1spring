@@ -1,0 +1,6 @@
+version: "2"
+services:
+  sprint-boot-app:
+    image: docexp1-spring
+    ports:
+      - "8084:8080"
