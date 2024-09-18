@@ -9,25 +9,24 @@ pipeline {
                 deleteDir{}
             }
         }
-    }
-    stage ("Clone repo"){
-        steps {
-            sh "git chone https://github.com/MaBouz/exp1-spring.git"
-        }
-    }
-    stage ("Generate Backend image") {
-        steps {
-            dir("exp1-spring") {
-                sh "mvn clean install"
-                sh "docker build -t docexp1-spring ."
+        stage ("Clone repo"){
+            steps {
+                sh "git chone https://github.com/MaBouz/exp1-spring.git"
             }
         }
-    }
-    stage ("Run docker compose") {
-        steps {
-            dir("exp1-spring") {
-                sh "docker-compose up -d"
+        stage ("Generate Backend image") {
+            steps {
+                dir("exp1-spring") {
+                    sh "mvn clean install"
+                    sh "docker build -t docexp1-spring ."
+                }
             }
         }
-    }  
-}
+        stage ("Run docker compose") {
+            steps {
+                dir("exp1-spring") {
+                    sh "docker-compose up -d"
+                }
+            }
+        }  
+    }
