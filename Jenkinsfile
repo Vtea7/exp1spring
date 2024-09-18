@@ -7,7 +7,6 @@ pipeline {
         stage ("Clean up"){
             steps {
                 deleteDir {}
-                sh 'ls -lah'
             }
         }
         stage ("Clone repo") {
